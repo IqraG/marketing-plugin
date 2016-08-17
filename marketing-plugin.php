@@ -11,7 +11,7 @@
 
 // Enqueues Style Sheet
 function mrkting_plugin_styles(){
-	wp_enqueue_style('plugin-style', plugins_url('/css/style.css', __FILE__));
+	wp_enqueue_style('mrkting-plugin-style', plugins_url('/css/style.css', __FILE__));
 }
 add_action( 'wp_enqueue_scripts', 'mrkting_plugin_styles' );
 
