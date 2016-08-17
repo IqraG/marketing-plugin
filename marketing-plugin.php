@@ -59,15 +59,20 @@ class MarketingWidget extends WP_Widget{
 			// Custom Query Arguments Setup
 			$cpost_query = new WP_Query(array( 
 				'post_type'		 => 'marketing', 
-				'posts_per_page' => 4
+				'posts_per_page' => 2,
+				'order' => 'ASC'
 			 	) );
 			// Displays the custom posts from Marketing. Shows Title and Featured posts
 			if ($cpost_query->have_posts()): while ($cpost_query->have_posts()): $cpost_query->the_post(); ?>		
 				<li class="sidebar-cposts">
-					<h3><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+					<div class="cp-title">
+						<h3><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+					</div>
+					<div class="cp-img">
+						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
         					<?php the_post_thumbnail(); ?>
-    				</a>
+    					</a>
+    				</div>
 				</li>				
 				<?php 
 					endwhile;
