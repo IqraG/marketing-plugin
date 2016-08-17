@@ -24,9 +24,9 @@ function create_post_type() {
         'name' 			=> __( 'Marketing' ),
         'singular_name' => __( 'Marketing' )
       ),
-      'public' 		=> true,
-      'has_archive' => true,
-      'supports' 	=> array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+      'public' 		=> true, // Allows posts to be seen by the public
+      'has_archive' => true, // Allows posts to be archived
+      'supports' 	=> array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ), // Adds support for Excerpt, Features Images, Custom Fields, Comments, Title/Author/Editor fields
     )
   );
 }
@@ -58,11 +58,11 @@ class MarketingWidget extends WP_Widget{
 			<?php
 			// Custom Query Arguments Setup
 			$cpost_query = new WP_Query(array( 
-				'post_type'		 => 'marketing', 
-				'posts_per_page' => 2,
-				'order' => 'ASC'
+				'post_type'		 => 'marketing', // Gets the posts from Marketing custom posts
+				'posts_per_page' => 2, // Displays only 2 posts
+				'order' => 'ASC' // Orders posts by title
 			 	) );
-			// Displays the custom posts from Marketing. Shows Title and Featured posts
+			// Displays the custom posts from Marketing. Shows Title and Featured images
 			if ($cpost_query->have_posts()): while ($cpost_query->have_posts()): $cpost_query->the_post(); ?>		
 				<li class="sidebar-cposts">
 					<div class="cp-title">
@@ -101,7 +101,7 @@ class MarketingWidget extends WP_Widget{
 	// Save, Submit, Sanitize 
 	public function update($new_instance,$old_instance){
 		$instance = $old_instance;
-		$new_instance = wp_parse_args((array) $new_instance, array('title' => '', 'count' => 0, 'dropdown' => ''));
+		$new_instance = wp_parse_args((array) $new_instance, array('title' => ''));
 		$instance['title'] = strip_tags($new_instance['title']);
 		return $instance;
 	}			
