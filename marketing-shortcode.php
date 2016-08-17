@@ -7,7 +7,8 @@ function recent_posts() {
       'ignore_sticky_posts' => 1)); // Ignores the sticky post
    if ($posts_query->have_posts()) : while ($posts_query->have_posts()) : $posts_query->the_post(); ?>
       <ul> <?php
-      $recent_posts = wp_get_recent_posts(); // References this from Codex, wp_get_recent_posts gets the recent posts
+      // Referenced this from Codex, wp_get_recent_posts gets the recent posts
+      $recent_posts = wp_get_recent_posts(); 
          echo '<li><a href="' . get_permalink() . '">' . get_the_title() . '</a></li>'; // Displays the recent posts in a list
       ?>
       </ul>
