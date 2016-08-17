@@ -2,10 +2,10 @@
 
 /*
  * Plugin Name: Marketing
- * PLugin URI: phoenix.sheridanc.on.ca/~ccit3685
+ * Plugin URI: phoenix.sheridanc.on.ca/~ccit3685
  * Author: Iqra Ghazi
  * Author URI: phoenix.sheridanc.on.ca/~ccit3685
- * Description: Plugin Assignment for CCT460
+ * Description: Displays custom posts, with a shortcode that displays recent posts
  * Version: 1.0.0
  */
 
