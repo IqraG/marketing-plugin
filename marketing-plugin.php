@@ -108,8 +108,5 @@ class MarketingWidget extends WP_Widget{
 }
 add_action('widgets_init', function(){ register_widget('MarketingWidget'); });
 
-
-
-
-
-
+// Calls the shortcode file
+require ( plugin_dir_path( __FILE__ ) . '/marketing-shortcode.php');
