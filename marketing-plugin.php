@@ -10,10 +10,10 @@
  */
 
 // Enqueues Style Sheet
-function mrkting_plugin_style(){
-	wp_enqueue_style('plugin-style', plugins_url('/labfour/style.css', __FILE__));
+function mrkting_plugin_styles(){
+	wp_enqueue_style('plugin-style', plugins_url('/css/style.css', __FILE__));
 }
-add_action( 'wp_enqueue_scripts', 'mrkting_plugin_style' );
+add_action( 'wp_enqueue_scripts', 'mrkting_plugin_styles' );
 
 // Creates Custom Post Type
 add_action( 'init', 'create_post_type' );
@@ -54,7 +54,7 @@ class MarketingWidget extends WP_Widget{
 			echo $args['before_title'] . $title . $args['after_title'];
 		} ?>
 
-			<ul id="mrkting-widget">
+			<ul class="mrkting-widget">
 			<?php
 			// Custom Query Arguments Setup
 			$cpost_query = new WP_Query(array( 
