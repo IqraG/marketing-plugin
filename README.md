@@ -20,4 +20,4 @@ The plugin also includes a shortcode that will display the 5 most recent posts (
 
 == Use of Shortcode ==
 
-To use the short code the user simplely puts the following code anywhere in their post or page: [recent_posts].  This will display the five most recent posts (not inlcuding the ones from the custom post type) in a list.
+To use the shortcode the user simply puts the following code anywhere in their post or page: [recent_posts]. This will display the five most recent posts (not including the ones from the custom post type) in a list.
