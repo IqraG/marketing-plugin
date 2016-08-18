@@ -4,7 +4,6 @@ Marketing Plugin
 == Marketing Plugin ==
 
 Author: Iqra Ghazi
-
 Author URI: phoenix.sheridanc.on.ca/~ccit3685
 
 == Description ==
